@@ -1,0 +1,242 @@
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+	
+</h3>
+<div class="page-bar">
+	<ul class="page-breadcrumb">
+		<li>
+			<i class="fa fa-home"></i>
+            <i class="fa fa-angle-right"></i>
+			<a href="#/ng_createAvalibility.html">Availibility</a>
+			
+		</li>
+		
+	</ul>
+	
+</div>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN SPINNER -->
+ <div ng-spinner-bar class="page-spinner-bar">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+           
+            <div class="portlet-body">
+                <div class="tabbable" ng-init="!activeTab?activeTab=0:''">
+                    <ul class="nav nav-tabs tab-padding tab-space-3 tab-blue">
+                        <li ng-class="activeTab==0 ? 'active' : ''" ng-click="activeTab=0" class="" style="">
+                            <a>
+                          EXSISTING
+                        </a>
+                        </li>
+                        <li ng-class="activeTab==1 ? 'active' : ''" ng-click="activeTab=1" class="" style="">
+                            <a>
+                          CREATE NEW
+                        </a>
+                        </li>
+                       
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active ng-scope ng-hide" ng-show="activeTab==0" ng-include="'views/exsisting.html'" style="">
+                        </div>
+                        <div class="tab-pane active ng-scope ng-hide" ng-show="activeTab==1" ng-include="'views/newAva.html'" style="">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+
+
+<!-- END MAIN CONTENT -->
+
+<!-- BEGIN MAIN JS -->
+<script>
+	// Accordion demo controller
+
+	// Alert demo controller
+
+
+	// Buttons demo controller
+	
+
+	// Tabs demo controller
+//	function TabsDemoCtrl($scope) {
+//		$scope.tabs = [
+//		    { title:'Dynamic Title 1', content:'Dynamic content 1' },
+//		    { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+//		  ];
+//
+//		  /*
+//		  $scope.alertMe = function() {
+//		    setTimeout(function() {
+//		      alert('You\'ve selected the alert tab!');
+//		    });
+//		  };
+//		  */
+//	}
+
+	// Carousel demo controller
+
+
+	// Collapse demo controller
+	
+
+	// Datepicker demo controller
+//	function DatepickerDemoCtrl($scope) {
+//		$scope.today = function() {
+//	    	$scope.dt = new Date();
+//	  	};
+//	  	$scope.today();
+//
+//	  	$scope.clear = function () {
+//	    	$scope.dt = null;
+//	  	};
+//
+//	  	// Disable weekend selection
+//	  	$scope.disabled = function(date, mode) {
+//	    	return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+//	  	};
+//
+//	  	$scope.toggleMin = function() {
+//	    	$scope.minDate = $scope.minDate ? null : new Date();
+//	  	};
+//	  	$scope.toggleMin();
+//
+//	  	$scope.open = function($event) {
+//	    	$event.preventDefault();
+//	    	$event.stopPropagation();
+//
+//	    	$scope.opened = true;
+//	  	};
+//
+//	  	$scope.dateOptions = {
+//	    	formatYear: 'yy',
+//	    	startingDay: 1
+//	  	};
+//
+//	  	$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+//	  	$scope.format = $scope.formats[0];
+//	}
+
+	// Timepicker demo controller
+//	function TimepickerDemoCtrl($scope) {
+//		$scope.mytime = new Date();
+//
+//		  $scope.hstep = 1;
+//		  $scope.mstep = 15;
+//
+//		  $scope.options = {
+//		    hstep: [1, 2, 3],
+//		    mstep: [1, 5, 10, 15, 25, 30]
+//		  };
+//
+//		  $scope.ismeridian = true;
+//		  $scope.toggleMode = function() {
+//		    $scope.ismeridian = ! $scope.ismeridian;
+//		  };
+//
+//		  $scope.update = function() {
+//		    var d = new Date();
+//		    d.setHours( 14 );
+//		    d.setMinutes( 0 );
+//		    $scope.mytime = d;
+//		  };
+//
+//		  $scope.changed = function () {
+//		    console.log('Time changed to: ' + $scope.mytime);
+//		  };
+//
+//		  $scope.clear = function() {
+//		    $scope.mytime = null;
+//		  };
+//	}
+
+	// Dropdown demo controller
+//	function DropdownDemoCtrl($scope) {
+//		$scope.items = [
+//		    'The first choice!',
+//		    'And another choice for you.',
+//		    'but wait! A third!'
+//		  ];
+//
+//		  $scope.status = {
+//		    isopen: false
+//		  };
+//
+//		  $scope.toggled = function(open) {
+//		    console.log('Dropdown is now: ', open);
+//		  };
+//
+//		  $scope.toggleDropdown = function($event) {
+//		    $event.preventDefault();
+//		    $event.stopPropagation();
+//		    $scope.status.isopen = !$scope.status.isopen;
+//		  };
+//	}
+
+	// Modal demo controllers
+//	function ModalDemoCtrl($scope, $modal, $log) {
+//		$scope.items = ['item1', 'item2', 'item3'];
+//
+//	  	$scope.open = function (size) {
+//
+//		    var modalInstance = $modal.open({
+//		      templateUrl: 'myModalContent.html',
+//		      controller: 'ModalInstanceCtrl',
+//		      size: size,
+//		      resolve: {
+//		        items: function () {
+//		          return $scope.items;
+//		        }
+//		      }
+//		    });
+//
+//		    modalInstance.result.then(function (selectedItem) {
+//		      $scope.selected = selectedItem;
+//		    }, function () {
+//		      $log.info('Modal dismissed at: ' + new Date());
+//		    });
+//	  	};
+//	}
+
+//	function ModalInstanceCtrl($scope, $modalInstance, items) {
+//		$scope.items = items;
+//	  	$scope.selected = {
+//	    	item: $scope.items[0]
+//	  	};
+//
+//	  	$scope.ok = function () {
+//	    	$modalInstance.close($scope.selected.item);
+//	  	};
+//
+//	  	$scope.cancel = function () {
+//	    	$modalInstance.dismiss('cancel');
+//	  	};
+//	}
+
+	// Pagination demo controller
+	
+	// Popover demo controller
+
+
+	// Progressbar demo controller
+
+	// Typeahead demo controller
+
+
+	// Rating demo controller
+// init todo page
+
+</script>
+<!-- END MAIN JS -->
